@@ -1,0 +1,175 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════
+   CivHabit — 国策树自律系统 主题
+   深色科幻 / 军事策略风格
+   ═══════════════════════════════════════════ */
+
+:root {
+  --bg-primary: #060a13;
+  --bg-secondary: #0d1321;
+  --bg-card: #111827;
+  --bg-card-hover: #1a2332;
+  --border-subtle: #1e293b;
+  --border-glow: #334155;
+
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+
+  --accent-gold: #f59e0b;
+  --accent-gold-glow: rgba(245, 158, 11, 0.3);
+  --accent-cyan: #06b6d4;
+  --accent-cyan-glow: rgba(6, 182, 212, 0.25);
+  --accent-red: #ef4444;
+  --accent-red-glow: rgba(239, 68, 68, 0.25);
+  --accent-green: #22c55e;
+  --accent-green-glow: rgba(34, 197, 94, 0.25);
+  --accent-purple: #a855f7;
+
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+/* ── 滚动条 ── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-glow);
+}
+
+/* ── 动画 ── */
+@keyframes pulse-border {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 var(--accent-cyan-glow);
+  }
+
+  50% {
+    box-shadow: 0 0 15px 3px var(--accent-cyan-glow);
+  }
+}
+
+@keyframes gold-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 8px 1px var(--accent-gold-glow);
+  }
+
+  50% {
+    box-shadow: 0 0 20px 5px var(--accent-gold-glow);
+  }
+}
+
+@keyframes crack-pulse {
+
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes float-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scan-line {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+.animate-pulse-border {
+  animation: pulse-border 2s ease-in-out infinite;
+}
+
+.animate-gold-glow {
+  animation: gold-glow 2.5s ease-in-out infinite;
+}
+
+.animate-crack-pulse {
+  animation: crack-pulse 1.5s ease-in-out infinite;
+}
+
+.animate-float-in {
+  animation: float-in 0.5s ease-out forwards;
+}
+
+/* ── React Flow 覆盖样式 ── */
+.react-flow__background {
+  background: var(--bg-primary) !important;
+}
+
+.react-flow__edge-path {
+  stroke: var(--border-glow) !important;
+  stroke-width: 2 !important;
+}
+
+.react-flow__controls {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: 8px !important;
+}
+
+.react-flow__controls-button {
+  background: var(--bg-card) !important;
+  border-bottom: 1px solid var(--border-subtle) !important;
+  fill: var(--text-secondary) !important;
+}
+
+.react-flow__controls-button:hover {
+  background: var(--bg-card-hover) !important;
+  fill: var(--text-primary) !important;
+}
+
+.react-flow__minimap {
+  background: var(--bg-secondary) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: 8px !important;
+}
+
+/* ── Orbitron 字体（标题/DEFCON） ── */
+.font-display {
+  font-family: 'Orbitron', monospace;
+}
